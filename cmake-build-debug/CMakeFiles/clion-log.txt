@@ -1,1 +1,4 @@
-CMakeLists.txt not found in /home/daniel/sonar-cpp Select CMakeLists.txt file...
+/snap/clion/103/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/daniel/sonar-cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/daniel/sonar-cpp/cmake-build-debug
