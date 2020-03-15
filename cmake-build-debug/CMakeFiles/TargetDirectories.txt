@@ -1,3 +1,0 @@
-/home/daniel/sonar-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/daniel/sonar-cpp/cmake-build-debug/CMakeFiles/sonar_cpp.dir
-/home/daniel/sonar-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir

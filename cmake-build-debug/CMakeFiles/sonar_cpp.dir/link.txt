@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/sonar_cpp.dir/main.cpp.o  -o sonar_cpp 
