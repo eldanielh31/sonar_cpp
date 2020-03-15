@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniel/sonar-cpp/calculadora.cpp
+calculadora.h
+/home/daniel/sonar-cpp/calculadora.h
+
+/home/daniel/sonar-cpp/calculadora.h
+
+/home/daniel/sonar-cpp/main.cpp
+iostream
+-
+calculadora.cpp
+/home/daniel/sonar-cpp/calculadora.cpp
+
