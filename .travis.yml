@@ -1,5 +1,26 @@
 dist: trusty
 sudo: false
 
+addons:
+  sonarcloud:
+    organization: "eldanielh31"
+    token:
+      secure: "GMgD6DDjgD7PNnb5uXETrW6sKH8tZaGBMKBWii8sGnjvDP9/1QKEXMNerMKR6EYQf3ktFBk4kTUOWEujRDxzze6YI/6KzaiSODSpEFpHi/JfTCRocX2gGOC9IxNv4MfMqIuWRtIWHF7mold1z1rMWJZC94VJqmcEUADn1OJyXJIWDw2e3uBnFMTMBCP5YqFeoBNxcJixnyCrYq60hGYHB6P+cJniNZfqbcXazVkYfeRVANUcUfRzZczCsTfY9QGxd5O93B6fa9/aic/BlOC4l4Rtnqq90ommdgFjZDvxdONBlrlk2QGsMPOfbA9Y2c4PtmCJA8d1qhc9nkPwjncEGIQZET6LaKjLsuxfV6s4heEqQDFaFbukGeFqFja8Z7Zv/U90WTt72/p4WbBo1sBqc7eZRAzGodgYUXXpiAKDNha3XafanBOqRbGZBujXhkwze0zsSGU9z/LYBwzIxvdI+ctvBwgafSgd9f6m1y13A0RAxmAjDPJ7KKcgPS4vn/iwdHJl4W01CBLlKIOPNu4b9TMUURhYIYzi5MV6OIEzxrzwCbjB7q03sG2KNMU16I4LTWVPZ4yzqQuHUAnSHTmReR6oF9FN8Q91tnmkh3Kji7SVHZPPlky3h2LNho5uXHmMOZajZa3jW4G4Byjl/dhuYJZ1EBciV78Sczf9XoXBXRo="
+
+
 script:
-  cmake
+  # Prepare the build system
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cd ..
+  # Wraps the compilation with the Build Wrapper to generate configuration (used
+  # later by the SonarQube Scanner) into the "bw-output" folder
+  - build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/
+  # And finally run the SonarQube analysis - read the "sonar-project.properties"
+  # file to see the specific configuration
+  - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
